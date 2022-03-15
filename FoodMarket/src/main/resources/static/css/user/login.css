@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+.btn-login {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family:'Noto Sans';
+  color: #ffffff;
+  font-size: 18px;
+  background: #5f0080;
+  padding: 15px 164px 15px 164px;
+  border: solid #5f0081 2px;
+  text-decoration: none;
+  margin:auto;
+  display:block;
+}
+
+.btn-login:hover {
+  text-decoration: none;
+}
+
+.btn-signup{
+  	-webkit-border-radius: 0;
+  	-moz-border-radius: 0;
+  	border-radius: 0px;
+	font-family:'Noto Sans';
+	background: #fff;
+	padding: 15px 155px 15px 155px;
+	margin: auto;
+	display: block;
+	font-size: 18px;
+	border: solid #5f0081 2px;
+	text-decoration: none;
+	color: #5f0081;
+}
+
+.btn-check{
+	-webkit-border-radius: 0;
+  	-moz-border-radius: 0;
+  	border-radius: 0px;
+	font-family:'Noto Sans';
+	background: #fff;
+	padding: 10px 30px 10px 30px;
+	margin: auto;
+	display: block;
+	font-size: 18px;
+	border: solid #5f0081 2px;
+	text-decoration: none;
+	color: #5f0081;
+}

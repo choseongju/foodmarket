@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="com.foodmarket.cho.member.mainForm.domain.MainFormDAO">
+<select id="selectGoods" resultType="com.foodmarket.cho.owner.domain.GoodsDTO">
+	SELECT
+		goods_uid, 
+		goods_name,
+		goods_price,
+		goods_explain,
+		goods_filePath,
+		goods_quantity
+	FROM
+		goods
+	
+</select>
+
+<!-- 조회수 top4 조회 -->
+<select id="viewCountTop4Goods" resultType="String">
+	SELECT
+		goods_uid
+	FROM
+		goodsCount ORDER BY goods_viewCount DESC
+</select>
+
+<!-- 좋아요 수 top4 조회 -->
+<select id="likeCountTop4Goods" resultType="String">
+	SELECT
+		goods_uid
+	FROM
+		goodsCount ORDER BY goods_likeCount DESC
+</select>
+
+<!-- top 상품 메인폼에 출력 -->
+<select id="top4Goods" resultType="com.foodmarket.cho.owner.domain.GoodsDTO">
+	SELECT
+		goods_uid,
+		goods_name,
+		goods_price,
+		goods_explain,
+		goods_filePath,
+		goods_quantity
+	FROM
+		goods
+	WHERE
+		goods_uid = #{uid}
+</select>
+
+<!-- 좋아요 수 top4 uid로 검색 -->
+<select id="likeTop4Goods" resultType="com.foodmarket.cho.owner.domain.GoodsDTO">
+	SELECT
+		goods_uid,
+		goods_name,
+		goods_price,
+		goods_explain,
+		goods_filePath,
+		goods_quantity
+	FROM
+		goods
+	WHERE
+		goods_uid = #{uid}
+</select>
+
+<select id="goodsSearch" resultType="com.foodmarket.cho.owner.domain.GoodsDTO">
+	SELECT
+		goods_uid,
+		goods_name,
+		goods_price,
+		goods_explain,
+		goods_filePath,
+		goods_quantity
+	FROM
+		goods
+	WHERE
+		goods_name Like CONCAT('%',#{keyword}, '%')
+	
+</select>
+</mapper>

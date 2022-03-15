@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.foodmarket.cho.member.goodsdetails.domain.dao.GoodsDetailsDAO">
+	
+	<select id="goodsDetails" resultType="com.foodmarket.cho.owner.domain.GoodsDTO">
+		SELECT
+			*
+		FROM
+			goods
+		WHERE
+			goods_uid = #{goods_uid}
+	</select>
+	
+	<update id="updateViewCount">
+		UPDATE 
+			goodsCount
+		SET
+			goods_viewCount = goods_viewCount + 1
+		WHERE
+			goods_uid = #{goods_uid}
+	</update>
+	
+	<select id="selectGoodsLike" resultType="int">
+		SELECT
+			count(*)
+		FROM
+			goodsLike
+		WHERE
+			mb_id = #{id} and goods_uid = #{goods_uid}
+	</select>
+	
+	<insert id="insertGoodsLike">
+		INSERT INTO
+			goodsLike(
+				mb_id,
+				goods_uid,
+				goods_name
+				)
+			VALUES(
+				#{id},
+				#{goods_uid},
+				#{goods_name}
+				)
+	</insert>
+	
+	<delete id="deleteGoodsLike">
+		DELETE FROM
+			goodsLike
+		WHERE
+			mb_id = #{id} and goods_uid = #{goods_uid}
+	</delete>
+	
+	<!-- 좋아요 선택 시 좋아요 카운트 1 증가 -->
+	<update id="updateGoodsLike">
+		UPDATE
+			goodscount
+		SET
+			goods_likeCount = goods_likeCount + 1
+		WHERE
+			goods_uid = #{goods_uid}
+	</update>
+	
+	<!-- 좋아요 취소시 -->
+	<update id="cancelGoodsLike">
+		UPDATE
+			goodscount
+		SET
+			goods_likeCount = goods_likeCount - 1
+		WHERE
+			goods_uid = #{goods_uid}
+	</update>
+</mapper>

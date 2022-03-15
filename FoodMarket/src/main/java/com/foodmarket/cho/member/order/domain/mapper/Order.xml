@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.foodmarket.cho.member.order.domain.dao.OrderDAO">
+<update id="updateOrderCnt">
+	UPDATE 
+		shopping_basket
+	SET
+		order_cnt = 1
+	WHERE
+		mb_id = #{mb_id} 
+			AND
+		basket_uid = #{basket_uid}
+</update>
+
+<update id="updateOrderCntReset">
+	UPDATE
+		shopping_basket
+	SET
+		order_cnt = 0
+	WHERE
+		mb_id = #{mb_id}
+</update>
+
+<select id="orderGoods" resultType="com.foodmarket.cho.member.basket.domain.dto.BasketDTO">
+	SELECT
+		basket_uid,
+		goods_uid,
+		goods_name,
+		goods_select_quantity,
+		goods_price,
+		goods_filePath
+	FROM
+		shopping_basket
+	WHERE
+		mb_id = #{mb_id}
+			AND
+		order_cnt = 1
+</select>
+
+<select id="selectMemberAddress" resultType="com.foodmarket.cho.security.domain.UserDTO">
+	SELECT
+		mb_name name,
+		mb_phone phone,
+		mb_address address,
+		mb_address_detail address_detail
+	FROM
+		member
+	WHERE
+		mb_id = #{mb_id}
+</select>
+</mapper>

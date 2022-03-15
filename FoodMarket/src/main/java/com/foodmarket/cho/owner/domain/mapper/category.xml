@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.foodmarket.cho.owner.domain.CategoryDAO">
+<select id="category" resultType="com.foodmarket.cho.owner.domain.CategoryDTO">
+	SELECT 
+		category_id categoryId,
+		category_name categoryName
+	FROM
+		category
+	ORDER BY 
+		category_id
+</select>
+
+<select id="kind" resultType="com.foodmarket.cho.owner.domain.KindDTO">
+	SELECT
+		category_name categoryName,
+		kind_name kindName
+	FROM
+		kind
+	WHERE
+		category_name = #{category}
+</select>
+
+<insert id="goodsEnrollment" parameterType="com.foodmarket.cho.owner.domain.GoodsDTO">
+	INSERT INTO
+			goods(
+		goods_category,
+		goods_kind,
+		goods_name,
+		goods_price,
+		goods_explain,
+		goods_filePath,
+		goods_quantity
+		) 
+		VALUES(
+			#{goods_category},
+			#{goods_kind},
+			#{goods_name},
+			#{goods_price},
+			#{goods_explain},
+			#{goods_filePath},
+			#{goods_quantity}
+		)
+</insert>
+
+<insert id="goodsCount">
+	INSERT INTO
+			goodsCount(
+		goods_name
+		)
+		VALUES(
+			#{param1}
+		)
+</insert>
+</mapper>

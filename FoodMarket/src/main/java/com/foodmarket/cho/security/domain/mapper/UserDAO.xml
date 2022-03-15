@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.foodmarket.cho.security.domain.UserDAO">
+
+	<insert id="addUser" parameterType="com.foodmarket.cho.security.domain.UserDTO">
+		INSERT INTO member(mb_id, mb_pw, mb_email, mb_name, mb_phone, mb_address, mb_address_detail)
+		VALUES(#{id}, #{pw}, #{email}, #{name}, #{phone}, #{address}, #{address_detail});
+	</insert>
+
+	<insert id="addAuth">
+		INSERT INTO authority
+		VALUES(#{param1}, #{param2});
+	</insert>
+	
+	<select id="findById" resultType="com.foodmarket.cho.security.domain.UserDTO">
+		SELECT
+			mb_uid uid,
+			mb_id id,
+			mb_pw pw,
+			mb_name name,
+			mb_email email,
+			mb_enabled enabled,
+			mb_regdate regdate
+		FROM member
+		WHERE mb_id = #{id}
+	</select>
+	
+	<select id="selectAuthorityById" resultType="String">
+		SELECT mb_auth
+		FROM authority
+		WHERE mb_id = #{id}
+	</select>
+	
+	<select id="checkID" resultType="int">
+		SELECT 
+			count(mb_id)
+		FROM
+			member
+		WHERE
+			mb_id = #{id}
+	</select>
+	
+	<select id="checkEmail" resultType="int">
+		SELECT
+			count(mb_email)
+		FROM
+			member
+		WHERE
+			mb_email = #{email}
+	</select>
+	
+	<select id="selectUserName" resultType="String">
+		SELECT
+			mb_name
+		FROM
+			foodmarket.member
+		WHERE
+			mb_id = #{userId}
+	</select>
+</mapper>

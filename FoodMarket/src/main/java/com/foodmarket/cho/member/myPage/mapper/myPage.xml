@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.foodmarket.cho.member.myPage.dao.MyPageDAO">
+<select id="memberInfo" resultType="com.foodmarket.cho.security.domain.UserDTO">
+	SELECT
+		mb_id id,
+		mb_name name,
+		mb_phone phone,
+		mb_email email,
+		mb_address address,
+		mb_address_detail address_detail
+	FROM
+		member
+	WHERE
+		mb_id = #{mb_id}
+</select>
+</mapper>

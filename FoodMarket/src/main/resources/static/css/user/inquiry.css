@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+h3{
+	text-align:center;
+}
+
+#inquiry-table{
+	text-align:center;
+	margin:auto;
+	width:50%;
+}

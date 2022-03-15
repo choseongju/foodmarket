@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.foodmarket.cho.member.category.domain.dao.ByCategoryDAO">
+<select id="vegetable" resultType="com.foodmarket.cho.owner.domain.GoodsDTO">
+	SELECT
+		goods_uid,
+		goods_category,
+		goods_kind,
+		goods_name,
+		goods_price,
+		goods_explain,
+		goods_filePath,
+		goods_quantity
+	FROM
+		goods
+	WHERE
+		goods_category = "채소"
+</select>
+
+</mapper>

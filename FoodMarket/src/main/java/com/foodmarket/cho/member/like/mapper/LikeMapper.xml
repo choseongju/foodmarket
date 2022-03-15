@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.foodmarket.cho.member.like.dao.LikeDAO">
+
+<select id="selectGoodsUid" resultType="String">
+	SELECT
+		goods_uid
+	FROM
+		goodslike
+	WHERE
+		mb_id = #{mb_id}
+</select>
+
+<select id="selectGoods" resultType="com.foodmarket.cho.owner.domain.GoodsDTO">
+	SELECT
+		goods_uid,
+		goods_category,
+		goods_kind,
+		goods_name,
+		goods_price,
+		goods_explain,
+		goods_filePath,
+		goods_quantity
+	FROM
+		goods
+	WHERE
+		goods_uid = #{goods_uid}
+</select>
+
+<delete id="deleteLike">
+	DELETE
+	FROM
+		goodslike
+	WHERE
+		goods_uid = #{goods_uid}
+</delete>
+</mapper>

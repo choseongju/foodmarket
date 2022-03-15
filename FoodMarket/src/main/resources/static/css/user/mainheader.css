@@ -1,0 +1,203 @@
+@charset "UTF-8";
+
+.user_header{
+	position:relative;
+	font-family: Monospace;
+}
+
+.userMenu{
+	padding: 0px 400px 0px 400px;
+	font-family: arial;
+	display:block;
+}
+.user_headbar{
+	float:right;
+	padding-right:150px;
+	color:black;
+}
+
+.ul_userMenu {
+	list-style:none;
+	display:inline;
+	float:right;
+	font-size:13px;
+	padding: 0;
+	margin: 0;
+}
+
+.ul_category{
+	list-style:none;
+	display:inline;
+	padding:0;
+	margin:0;
+}
+
+li{
+	display:inline;
+}
+
+#li_catecory {
+	margin-top:0px;
+	float:left;
+	margin-right:50px;
+	font-size:22px;
+	font-weight:600;
+}
+
+#li_header{
+	float:right;
+	margin-right:10px;	
+}
+
+.total_category{
+	position: relative;
+	display: inline-block;
+}
+
+.logo{
+	width:190px;
+	height:100px;
+}
+
+h1{
+	text-align:center;
+	padding:0;
+	margin:0;
+	margin-top: 40px;
+}
+
+.category{
+	padding: 30px 400px 30px 400px;
+	background-color: white;
+}
+
+.li_help{
+	padding: 0px 8px 0px 8px;
+}
+
+.li_login{
+	padding: 0px 8px 0px 8px;
+}
+
+.li_join{
+	padding: 0px 8px 0px 8px;
+}
+
+span{
+	font-size:20px;
+	font-family:'Noto Sans';
+}
+
+a:link { 
+ color: #58595b;
+ text-decoration: none;
+}
+
+a:visited {
+ color: #58595b;
+ text-decoration: none;
+}
+
+a:hover {
+ color: #5f0080;
+ text-decoration: none;
+}
+
+a:active {
+ color: #58595b;
+ text-decoration: none;
+}
+
+.btn_totalCategory{
+	font-size:20px;
+	font-family:'Noto Sans';
+	border:none;
+	background-color: white;
+	font-weight:600
+	}
+
+.totalCategory_content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.totalCategory_content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.totalCategory_content a:hover {
+	background-color: #c8c8c8;
+}
+
+.total_category:hover .totalCategory_content {
+	display: block;
+	font-size:15px;
+	font-family:'Noto Sans';
+	width:280px;
+	background-color: white;
+}
+
+.total_category:hover .btn_totalCategory {
+	color: #5f0080;
+}
+
+#icon_category{
+	margin-right:25px;
+	width:22px;
+	height:25px;
+}
+
+#search_icon{
+	padding-top:1px;
+	width:20px;
+	height:20px;
+}
+
+#btn_search{
+	background-color:white;
+	border:none;
+}
+
+#shopping_icon{
+	width:28px;
+	height:28px;
+}
+
+#btn_basket{
+	background-color:white;
+	border:none;
+}
+
+#li_category a:hover{
+	color: #5f0080;
+}
+
+#keyword{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+#btn_goLike{
+	background-color:white;
+	border:none;
+}
+
+#like_icon{
+	width:28px;
+	height:28px;
+}
+
+#keywordText{
+	font-size:13px;
+	width:250px; height:30px;
+	padding: 0 19px;
+	border-radius: 5px;
+}
+<!-- -->
